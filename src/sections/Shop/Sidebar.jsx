@@ -1,4 +1,4 @@
-import cate from "../../../public/json/item.json";
+import cate from "../../../src/json/item.json";
 
 const Sidebar = ({ setCat, cat }) => {
   const categories = [...new Set(cate.map((i) => i.category))];

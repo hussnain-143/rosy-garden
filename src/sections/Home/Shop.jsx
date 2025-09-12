@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "../../components/ui/Button";
-import products from "../../../public/json/item.json";
+import products from "../../../src/json/item.json";
 
 import ProductCard from "../../components/layouts/ProductCard";
 import { Link } from "react-router-dom";
