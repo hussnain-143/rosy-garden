@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-didot: "GFS Didot", serif;
+  --color-red-custom: #be2a2d;
+  --color-green-custom: #7fb226;
+}
