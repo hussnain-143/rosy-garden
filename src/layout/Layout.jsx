@@ -5,7 +5,7 @@ import Footer from "../components/layouts/Footer";
 
 const Layout = () => {
   return (
-    <div className="flex  mx-auto flex-col min-h-screen ">
+    <div className="flex  mx-auto flex-col  min-h-screen ">
       {/* Header */}
       <div className="sticky top-0 z-999">
           <div className=" px-5 bg-white ">

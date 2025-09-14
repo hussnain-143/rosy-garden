@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "category": "Roses",
+    "name": "Blue Rose",
+    "price": 240,
+    "description": "A rare and unique blue rose symbolizing mystery and elegance.",
+    "image": "/images/rose/1.svg",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "category": "Roses",
+    "name": "White Rose (100 pieces)",
+    "price": 220,
+    "description": "A bouquet of 100 pure white roses representing peace and love.",
+    "image": "/images/rose/2.svg",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "category": "Roses",
+    "name": "Black Rose",
+    "price": 320,
+    "description": "An exotic black rose, symbolizing elegance and mystery.",
+    "image": "/images/rose/3.svg",
+    "inStock": false
+  },
+  {
+    "id": 4,
+    "category": "Roses",
+    "name": "Red Rose (120 pieces)",
+    "price": 210,
+    "description": "A large bouquet of 120 red roses, perfect for expressing love.",
+    "image": "/images/rose/4.svg",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "category": "Lilies",
+    "name": "White Lily Bouquet",
+    "price": 180,
+    "description": "Elegant white lilies, representing purity and renewal.",
+    "image": "/images/Lily/1.svg",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "category": "Lilies",
+    "name": "Pink Lily Charm",
+    "price": 220,
+    "description": "Charming pink lilies, a symbol of admiration and love.",
+    "image": "/images/Lily/2.svg",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "category": "Lilies",
+    "name": "Oriental Lily Mix",
+    "price": 250,
+    "description": "A vibrant mix of oriental lilies, bringing fragrance and beauty.",
+    "image": "/images/Lily/3.svg",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "category": "Lilies",
+    "name": "Yellow Lily Sunshine",
+    "price": 200,
+    "description": "Bright yellow lilies symbolizing joy and positivity.",
+    "image": "/images/Lily/4.svg",
+    "inStock": true
+  },
+  {
+    "id": 9,
+    "category": "Tulips",
+    "name": "Red Tulip Bouquet",
+    "price": 150,
+    "description": "A bouquet of red tulips, perfect for romantic gestures.",
+    "image": "/images/Tulips/1.svg",
+    "inStock": true
+  },
+  {
+    "id": 10,
+    "category": "Tulips",
+    "name": "Pink Tulip Love",
+    "price": 180,
+    "description": "Delicate pink tulips symbolizing affection and care.",
+    "image": "/images/Tulips/2.svg",
+    "inStock": false
+  },
+  {
+    "id": 11,
+    "category": "Tulips",
+    "name": "Mixed Tulip Arrangement",
+    "price": 210,
+    "description": "A colorful arrangement of tulips for any occasion.",
+    "image": "/images/Tulips/3.svg",
+    "inStock": true
+  },
+  {
+    "id": 12,
+    "category": "Tulips",
+    "name": "White Tulip Purity",
+    "price": 170,
+    "description": "Pure white tulips, symbolizing innocence and respect.",
+    "image": "/images/Tulips/4.svg",
+    "inStock": true
+  },
+  {
+    "id": 13,
+    "category": "Orchids",
+    "name": "Purple Orchid Elegance",
+    "price": 300,
+    "description": "Elegant purple orchids symbolizing admiration and royalty.",
+    "image": "/images/Orchid/1.svg",
+    "inStock": true
+  },
+  {
+    "id": 14,
+    "category": "Orchids",
+    "name": "White Orchid Serenity",
+    "price": 280,
+    "description": "White orchids symbolizing peace, calm, and elegance.",
+    "image": "/images/Orchid/2.svg",
+    "inStock": true
+  },
+  {
+    "id": 15,
+    "category": "Orchids",
+    "name": "Blue Orchid Exotic",
+    "price": 320,
+    "description": "Exotic blue orchids that bring a unique touch of beauty.",
+    "image": "/images/Orchid/3.svg",
+    "inStock": false
+  },
+  {
+    "id": 16,
+    "category": "Orchids",
+    "name": "Mixed Orchid Luxury Box",
+    "price": 350,
+    "description": "Luxury orchid mix in a premium box arrangement.",
+    "image": "/images/Orchid/4.svg",
+    "inStock": true
+  },
+  {
+    "id": 17,
+    "category": "Daisies",
+    "name": "White Daisy Fresh",
+    "price": 120,
+    "description": "Fresh white daisies representing innocence and purity.",
+    "image": "/images/Daisy/1.svg",
+    "inStock": true
+  },
+  {
+    "id": 18,
+    "category": "Daisies",
+    "name": "Yellow Daisy Delight",
+    "price": 140,
+    "description": "Bright yellow daisies bringing joy and cheer.",
+    "image": "/images/Daisy/2.svg",
+    "inStock": true
+  },
+  {
+    "id": 19,
+    "category": "Daisies",
+    "name": "Pink Daisy Basket",
+    "price": 160,
+    "description": "A basket filled with pink daisies, perfect for gifting.",
+    "image": "/images/Daisy/3.svg",
+    "inStock": true
+  },
+  {
+    "id": 20,
+    "category": "Daisies",
+    "name": "Mixed Daisy Bouquet",
+    "price": 180,
+    "description": "A cheerful bouquet of mixed daisies for every occasion.",
+    "image": "/images/Daisy/4.svg",
+    "inStock": false
+  },
+  {
+    "id": 21,
+    "category": "Peonies",
+    "name": "Pink Peony Romance",
+    "price": 250,
+    "description": "Romantic pink peonies symbolizing love and prosperity.",
+    "image": "/images/Peony/1.svg",
+    "inStock": true
+  },
+  {
+    "id": 22,
+    "category": "Peonies",
+    "name": "White Peony Classic",
+    "price": 270,
+    "description": "Classic white peonies for timeless elegance.",
+    "image": "/images/Peony/2.svg",
+    "inStock": true
+  },
+  {
+    "id": 23,
+    "category": "Peonies",
+    "name": "Red Peony Passion",
+    "price": 300,
+    "description": "Passionate red peonies symbolizing love and strength.",
+    "image": "/images/Peony/3.svg",
+    "inStock": false
+  },
+  {
+    "id": 24,
+    "category": "Peonies",
+    "name": "Mixed Peony Arrangement",
+    "price": 320,
+    "description": "A luxurious arrangement of assorted peonies.",
+    "image": "/images/Peony/4.svg",
+    "inStock": true
+  }
+]

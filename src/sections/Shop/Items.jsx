@@ -1,5 +1,5 @@
 import React from "react";
-import products from "../../../public/json/item.json";
+import products from "../../../src/json/item.json";
 import ProductCard from "../../components/layouts/ProductCard";
 
 const ShopItem = ({ cat }) => {
