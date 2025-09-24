@@ -4,7 +4,6 @@ import { FiTrash2 } from "react-icons/fi";
 import Button from "../components/ui/Button";
 
 const Cart = () => {
-  // Sample cart data
   const cartItems = [
     {
       id: 1,
@@ -22,47 +21,71 @@ const Cart = () => {
     },
   ];
 
-  // Calculate total
   const total = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
 
   return (
     <div className="container max-w-[1200px] mx-auto mt-16 mb-10 font-didot space-y-12">
       {/* Section Header */}
       <h2 className="text-3xl lg:text-4xl font-bold mb-4 leading-snug text-center">
-        <span className="inline-flex items-center gap-2">
-          Your Cart
-        </span>
+        Your Cart
       </h2>
 
-      {/* Cart Items */}
+      {/* Cart Table Layout */}
       {cartItems.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {cartItems.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white shadow-md rounded-xl p-6 flex gap-6 items-center hover:shadow-lg transition"
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-24 h-24 object-cover rounded-lg"
-              />
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-red-custom">
-                  {item.name}
-                </h3>
-                <p className="text-gray-500 text-sm">
-                  {item.qty} × Rs. {item.price}
-                </p>
-                <p className="font-medium mt-1">
-                  Rs. {item.qty * item.price}
-                </p>
-              </div>
-              <button className="text-red-custom hover:text-green-custom transition cursor-pointer">
-                <FiTrash2 size={22} />
-              </button>
-            </div>
-          ))}
+        <div className="overflow-x-auto border border-gray-200 shadow-sm">
+          <table className="w-full border-collapse">
+            <thead className="bg-red-custom text-white text-left text-sm uppercase">
+              <tr>
+                <th className="py-4 px-6">Product</th>
+                <th className="py-4 px-6">Price</th>
+                <th className="py-4 px-6">Quantity</th>
+                <th className="py-4 px-6">Total</th>
+                <th className="py-4 px-6 text-center">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartItems.map((item) => (
+                <tr
+                  key={item.id}
+                  className="border-t border-gray-200 hover:bg-green-custom/10 transition"
+                >
+                  {/* Product */}
+                  <td className="py-4 px-6 flex items-center gap-4">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-16 h-16 object-cover  border border-gray-200"
+                    />
+                    <span className="font-medium text-gray-800">{item.name}</span>
+                  </td>
+
+                  {/* Price */}
+                  <td className="py-4 px-6 text-gray-600">
+                    Rs. {item.price}
+                  </td>
+
+                  {/* Quantity */}
+                  <td className="py-4 px-6">
+                    <span className="px-3 py-1 border text-gray-700">
+                      {item.qty}
+                    </span>
+                  </td>
+
+                  {/* Subtotal */}
+                  <td className="py-4 px-6 font-semibold text-red-custom">
+                    Rs. {item.qty * item.price}
+                  </td>
+
+                  {/* Remove */}
+                  <td className="py-4 px-6 text-center">
+                    <button className="text-red-custom cursor-pointer hover:text-green-custom transition p-2 rounded-full">
+                      <FiTrash2 size={18} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       ) : (
         <p className="text-center text-gray-500">
@@ -72,15 +95,28 @@ const Cart = () => {
 
       {/* Cart Summary */}
       {cartItems.length > 0 && (
-        <div className="max-w-lg mx-auto bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
-          <h3 className="text-xl font-semibold mb-4">Cart Summary</h3>
-          <p className="text-gray-700 mb-6">
-            Total: <span className="font-bold text-red-custom">Rs. {total}</span>
-          </p>
-          <Button
-            message="Proceed to Checkout"
-            style="px-8 py-3 text-md font-bold"
-          />
+        <div className="max-w-md ml-auto bg-white border border-gray-200 p-6 shadow-sm">
+          <h3 className="text-xl font-bold mb-4 text-red-custom">
+            Cart Summary
+          </h3>
+          <div className="flex justify-between mb-2 text-gray-700">
+            <span>Subtotal</span>
+            <span>Rs. {total}</span>
+          </div>
+          <div className="flex justify-between mb-4 text-gray-700">
+            <span>Delivery</span>
+            <span className="text-green-custom">Free</span>
+          </div>
+          <div className="flex justify-between text-lg font-semibold border-t border-gray-200 pt-4">
+            <span>Total</span>
+            <span className="text-red-custom">Rs. {total}</span>
+          </div>
+          <div className="mt-6">
+            <Button
+              message="Proceed to Checkout"
+              style="w-full py-3 text-md font-bold"
+            />
+          </div>
         </div>
       )}
     </div>
