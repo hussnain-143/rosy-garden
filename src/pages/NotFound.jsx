@@ -6,7 +6,7 @@ import Button from "../components/ui/Button";
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-pink-50 to-white font-didot text-center px-6">
+    <div className="flex flex-col items-center justify-center min-h-screen  font-didot text-center px-6">
       {/* Animated Withered Flower */}
       <motion.div
         className="w-36 h-36 mb-6"
