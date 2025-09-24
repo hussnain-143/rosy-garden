@@ -1,25 +1,17 @@
 // src/pages/Cart.jsx
-import React from "react";
+import React, { useContext , useEffect } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import Button from "../components/ui/Button";
+import { cartContext } from "../context/CartContext";
 
 const Cart = () => {
-  const cartItems = [
-    {
-      id: 1,
-      name: "Rose Bouquet",
-      price: 1500,
-      qty: 2,
-      image: "/images/rose-bouquet.jpg",
-    },
-    {
-      id: 2,
-      name: "Tulip Basket",
-      price: 2200,
-      qty: 1,
-      image: "/images/tulip-basket.jpg",
-    },
-  ];
+
+    useEffect(() => {
+      document.title =
+        "Cart | Rosy Garden - Where Fresh Blooms Speak the Language of Your Heart";
+    }, []);
+
+  const { cartItems, dispatch } = useContext(cartContext);
 
   const total = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
 
@@ -32,61 +24,71 @@ const Cart = () => {
 
       {/* Cart Table Layout */}
       {cartItems.length > 0 ? (
-        <div className="overflow-x-auto border border-gray-200 shadow-sm">
-          <table className="w-full border-collapse">
-            <thead className="bg-red-custom text-white text-left text-sm uppercase">
-              <tr>
-                <th className="py-4 px-6">Product</th>
-                <th className="py-4 px-6">Price</th>
-                <th className="py-4 px-6">Quantity</th>
-                <th className="py-4 px-6">Total</th>
-                <th className="py-4 px-6 text-center">Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cartItems.map((item) => (
-                <tr
-                  key={item.id}
-                  className="border-t border-gray-200 hover:bg-green-custom/10 transition"
-                >
-                  {/* Product */}
-                  <td className="py-4 px-6 flex items-center gap-4">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-16 h-16 object-cover  border border-gray-200"
-                    />
-                    <span className="font-medium text-gray-800">{item.name}</span>
-                  </td>
-
-                  {/* Price */}
-                  <td className="py-4 px-6 text-gray-600">
-                    Rs. {item.price}
-                  </td>
-
-                  {/* Quantity */}
-                  <td className="py-4 px-6">
-                    <span className="px-3 py-1 border text-gray-700">
-                      {item.qty}
-                    </span>
-                  </td>
-
-                  {/* Subtotal */}
-                  <td className="py-4 px-6 font-semibold text-red-custom">
-                    Rs. {item.qty * item.price}
-                  </td>
-
-                  {/* Remove */}
-                  <td className="py-4 px-6 text-center">
-                    <button className="text-red-custom cursor-pointer hover:text-green-custom transition p-2 rounded-full">
-                      <FiTrash2 size={18} />
-                    </button>
-                  </td>
+        <>
+          <div className="overflow-x-auto border border-gray-200 shadow-sm">
+            <table className="w-full border-collapse">
+              <thead className="bg-red-custom text-white text-left text-sm uppercase">
+                <tr>
+                  <th className="py-4 px-6">Product</th>
+                  <th className="py-4 px-6">Price</th>
+                  <th className="py-4 px-6">Quantity</th>
+                  <th className="py-4 px-6">Total</th>
+                  <th className="py-4 px-6 text-center">Remove</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr
+                    key={item.id}
+                    className="border-t border-gray-200 hover:bg-green-custom/10 transition"
+                  >
+                    {/* Product */}
+                    <td className="py-4 px-6 flex items-center gap-4">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-16 h-16 object-cover  border border-gray-200"
+                      />
+                      <span className="font-medium text-gray-800">{item.title}</span>
+                    </td>
+
+                    {/* Price */}
+                    <td className="py-4 px-6 text-gray-600">
+                      Rs. {item.price}
+                    </td>
+
+                    {/* Quantity */}
+                    <td className="py-4 px-6">
+                      <span className="px-3 py-1 border text-gray-700">
+                        {item.qty}
+                      </span>
+                    </td>
+
+                    {/* Subtotal */}
+                    <td className="py-4 px-6 font-semibold text-red-custom">
+                      Rs. {item.qty * item.price}
+                    </td>
+
+                    {/* Remove */}
+                    <td className="py-4 px-6 text-center">
+                      <button className="text-red-custom cursor-pointer hover:text-green-custom transition p-2 rounded-full" onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item.id })}>
+                        <FiTrash2 size={18} />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p
+            className="text-right text-lg text-green-custom cursor-pointer hover:text-red-custom transition flex items-center justify-end gap-2"
+            onClick={() => dispatch({ type: "CLEAR_CART" })}
+          >
+            Clear
+            <FiTrash2 size={18} className="inline-block" />
+          </p>
+
+        </>
       ) : (
         <p className="text-center text-gray-500">
           Your cart is empty. Start shopping now!

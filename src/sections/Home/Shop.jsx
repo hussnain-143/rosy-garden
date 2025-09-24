@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState  } from "react";
 import Button from "../../components/ui/Button";
 import products from "../../../src/json/item.json";
 
+
 import ProductCard from "../../components/layouts/ProductCard";
 import { Link } from "react-router-dom";
+
+console.log(products);
 
 const Shop = () => {
   const [cate, setCategory] = useState("Roses");
@@ -47,7 +50,8 @@ const Shop = () => {
             .filter((item) => item.category === cate)
             .map((item) => (
               <ProductCard
-                key={item.id}
+                key={item._id}
+                id={item._id}
                 image={item.image}
                 title={item.name}
                 desc={item.description}

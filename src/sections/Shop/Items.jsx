@@ -22,7 +22,8 @@ const ShopItem = ({ cat }) => {
         {filteredProducts.length > 0 ? (
           filteredProducts.map((item) => (
             <ProductCard
-              key={item.id}
+              key={item._id}
+              id={item._id}
               image={item.image}
               title={item.name}
               desc={item.description}

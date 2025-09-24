@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 import Button from "../ui/Button";
+import { cartContext } from "../../context/CartContext";
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { cartItems } = useContext(cartContext);
 
   const linkClasses = ({ isActive }) =>
     `border-b-4 border-transparent p-1 transition-colors duration-300 
@@ -37,9 +40,10 @@ const Header = () => {
         {/* Cart Icon */}
         <NavLink to="/cart" className="relative">
           <FiShoppingCart size={24} className="text-gray-700 hover:text-red-custom" />
-          <span className="absolute -top-2 -right-2 bg-red-custom text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-            2
-          </span>
+          {cartItems.length > 0 && <span className="absolute -top-2 -right-2 bg-red-custom text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+            {cartItems.length}
+          </span> }
+          
         </NavLink>
 
         {/* Sign Up Button (hidden on small, visible md+) */}
