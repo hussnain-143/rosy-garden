@@ -21,7 +21,7 @@ const Hero = () => {
                 {/* Heading overlay */}
                 <div className="absolute top-0 mt-15 lg:mt-10 w-full px-4">
                     <h2 className="text-5xl lg:text-8xl text-black font-didot leading-tight">
-                        <span className="block">The Ultimate</span>
+                        <span className="block">The the Ultimate</span>
                         <span className="block ml-[0%] lg:ml-[40%] text-red-custom">Flower</span>
                         <span className="block ml-[0%] lg:ml-[52%] xl:ml-[60%]">Destination</span>
                     </h2>
